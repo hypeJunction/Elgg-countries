@@ -9,6 +9,16 @@
 
 require_once __DIR__ . '/autoloader.php';
 
+elgg_register_event_handler('init', 'system', 'countries_init');
+
+/**
+ * Initialize
+ * @return void
+ */
+function countries_init() {
+	elgg_extend_view('theme_sandbox/forms', 'theme_sandbox/forms/countries');
+}
+
 /**
  * Return a list of countries as $iso => $country_name pairs
  * @return array
@@ -27,5 +37,5 @@ function elgg_get_countries() {
  * @return array
  */
 function elgg_get_country_info($fields = null, $sort_field = 'name') {
-	return \hypeJunction\Geo\Countries::getCountries('iso', $fields, $sort_field);
+	return \hypeJunction\Countries::getCountries('iso', $fields, $sort_field);
 }
