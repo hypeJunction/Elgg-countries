@@ -1,0 +1,22 @@
+{
+	"name": "hypejunction/countries",
+	"type": "elgg-plugin",
+	"description": "Countries for Elgg",
+	"homepage": "http://hypejunction.com",
+	"keywords": [
+		"elgg", "plugin", "countries"
+	],
+	"license": "GPL-2.0",
+	"authors": [
+		{
+			"name": "Ismayil Khayredinov",
+			"email": "info@hypejunction.com"
+		}
+	],
+	"autoload": {
+		"psr-0": {
+			"": "classes/"
+		}
+	}
+}
+
