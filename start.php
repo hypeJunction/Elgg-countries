@@ -21,13 +21,14 @@ function countries_init() {
     if (elgg_is_active_plugin("profile_manager")) {
         // default profile options
         $profile_options = array(
-            "show_on_register" => false,
-            "mandatory" => false,
+            "show_on_register" => true,
+            "mandatory" => true,
             "user_editable" => true,
             "output_as_tags" => false,
-            "admin_only" => false,
+            "admin_only" => true,
             "simple_search" => true,
-            "advanced_search" => true
+            "advanced_search" => true,
+            "count_for_completeness" => true
         );
 
         // Add profile fields
