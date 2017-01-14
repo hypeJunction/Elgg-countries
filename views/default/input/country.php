@@ -16,4 +16,8 @@ if (!isset($vars['name'])) {
 	$vars['name'] = 'country';
 }
 
+if (!isset($vars['value']) || !$vars['value']) {
+    $vars['value'] = elgg_get_default_country();
+}
+
 echo elgg_view('input/dropdown', $vars);

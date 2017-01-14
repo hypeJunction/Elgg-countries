@@ -16,7 +16,23 @@ elgg_register_event_handler('init', 'system', 'countries_init');
  * @return void
  */
 function countries_init() {
-	elgg_extend_view('theme_sandbox/forms', 'theme_sandbox/forms/countries');
+    elgg_extend_view('theme_sandbox/forms', 'theme_sandbox/forms/countries');
+    
+    if (elgg_is_active_plugin("profile_manager")) {
+        // default profile options
+        $profile_options = array(
+            "show_on_register" => false,
+            "mandatory" => false,
+            "user_editable" => true,
+            "output_as_tags" => false,
+            "admin_only" => false,
+            "simple_search" => true,
+            "advanced_search" => true
+        );
+
+        // Add profile fields
+        profile_manager_add_custom_field_type("custom_profile_field_types", 'country', elgg_echo("country:input:label"), $profile_options);
+    }    
 }
 
 /**
@@ -38,4 +54,14 @@ function elgg_get_countries() {
  */
 function elgg_get_country_info($fields = null, $sort_field = 'name') {
 	return \hypeJunction\Countries::getCountries('iso', $fields, $sort_field);
+}
+
+function elgg_get_default_country() {
+    $default_country = elgg_get_plugin_setting('default_country', 'countries');
+
+    if ($default_country) {
+        return $default_country;
+    }
+
+    return ''; 
 }
