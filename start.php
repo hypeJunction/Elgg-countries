@@ -56,6 +56,11 @@ function elgg_get_country_info($fields = null, $sort_field = 'name') {
 	return \hypeJunction\Countries::getCountries('iso', $fields, $sort_field);
 }
 
+/**
+ * Get default country from settings
+ * 
+ * @return string
+ */
 function elgg_get_default_country() {
     $default_country = elgg_get_plugin_setting('default_country', 'countries');
 
