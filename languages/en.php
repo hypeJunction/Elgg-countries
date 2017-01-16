@@ -1,7 +1,6 @@
 <?php
 
 return [
-
 	'country:AD' => 'Andorra',
 	'country:AE' => 'United Arab Emirates',
 	'country:AF' => 'Afghanistan',
@@ -402,4 +401,11 @@ return [
 	'currency:ZAR' => 'Rand',
 	'currency:ZMW' => 'Kwacha',
 	'currency:ZWL' => 'Dollar',
+        
+        'country:input:label' => 'Country',
+
+        // settings
+        'countries:settings:default_country' => 'Default country',
+        'countries:settings:default_country:help' => 'Set a default country. It will be used as predefined value if user has not selected any other country yet.',
+        'countries:settings:select_country' => 'Select country',
 ];
